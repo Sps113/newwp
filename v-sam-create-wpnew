@@ -107,9 +107,9 @@ if [ $# -eq 4 ]; then
 fi
 if [ $# -eq 5 ]; then
     count=0;
-#     plugins=$(echo "$5" | tr '*' '\n')
+echo "~~~~================================================================="
     args=$5
-#     plugins=${args//*/ }
+
     plugins=(`echo $args | sed 's/*/\n/g'`)
     echo "$5"
 #     echo "$plugins"
@@ -118,8 +118,8 @@ if [ $# -eq 5 ]; then
 #         data=$(echo "${plugins[${count}]}" | tr ',' '\n')
         data=${plugins[${count}]};
         count=$(($count+1));
-        echo "$count <- count plugins"
-        echo "$data <- data from args"
+#         echo "$count <- count plugins"
+#         echo "$data <- data from args"
         if [ "${data}" = "0" ]; then
             continue;
         fi
@@ -148,7 +148,7 @@ mysql -u$DBUSER -p$PASSWDDB -e "USE $DBUSER; update wp_options set option_value 
 
 # clear
 
-echo "~~~~================================================================="
+
 echo "Installation is complete. Your username/password is listed below."
 echo ""
 echo "Site: http://$domain/"
