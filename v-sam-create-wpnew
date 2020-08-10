@@ -126,10 +126,14 @@ if [ $# -eq 5 ]; then
         
         if [ "${data}" = "1" ]; then
             sudo -H -u$user /home/$user/wp plugin install $line 
+            echo "Install plugin $line"
+            echo ""
         fi
 
         if [ "${data}" = "2" ]; then 
             sudo -H -u$user /home/$user/wp plugin install $line --activate;
+            echo "Install plugin $line and activate"
+            echo ""
         fi
    
         
