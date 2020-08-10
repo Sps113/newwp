@@ -92,7 +92,7 @@ chmod +x wp-cli.phar
 sudo mv wp-cli.phar wp
 
 cd /home/$user/web/$domain/public_html
-
+rm -rf /home/$user/web/$domain/public_html/*
 sudo -H -u$user /home/$user/wp core download
 sudo -H -u$user /home/$user/wp core config --dbname=$DBUSER --dbuser=$DBUSER --dbpass=$PASSWDDB
 

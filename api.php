@@ -35,7 +35,7 @@ if (isset($_SESSION['user'])) {
             echo ' <div class="panel panel-info">
     <div class="panel-heading">Install Detail</div>
     <div class="panel-body">';
-            var_dump($GET['pls'], $plugins);
+           // var_dump($GET['pls'], $plugins);
             print_r($ot['1']);
             echo '</div>
   </div>';
