@@ -3,13 +3,11 @@
 include $_SERVER['DOCUMENT_ROOT'] . "/inc/main.php";
 if (isset($_SESSION['user'])) {
     if (isset($_GET['domain'])) {
+        $domain = $_GET['domain'];
         if (!empty($_GET['email'])) {
             $email = $_GET['email'];
         } else {
-            exec(VESTA_CMD . "v-list-user " . $user . " json", $outputi, $return_vari);
-            $datai = json_decode(implode('', $outputi), true);
-            $dati = array_reverse($datao, true);
-            $email = $dati["$user"]['CONTACT'];
+            $email = "admin@".$domain;
         }
         if (!empty($_GET['standart'])) {
             $standart = $_GET['standart'];
@@ -28,7 +26,6 @@ if (isset($_SESSION['user'])) {
             }
         } 
         
-        $domain = $_GET['domain'];
         $command = '/usr/bin/sudo /usr/local/vesta/bin/v-sam-create-wpnew "' . $domain . '" "' . $email . '" "' . $user . '" "' . $standart. '" "' . $plugins. '"   2>&1';
         exec($command, $output, $return_vari);
         $ddata = implode('<br/>', $output);
