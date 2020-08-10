@@ -16,11 +16,12 @@ if (isset($_SESSION['user'])) {
         } else {
             $standart = "true";
         }
-        if (!empty($_GET['pl'])) {
-            $pl = $_GET['pl'];
+        if (!empty($_GET['pls'])) {
+            $pl = $_GET['pls'];
             $plugins = "";
-            foreach ($pl as $plu) {
-                $plugin = $plugin . ";". $plu["id"]. "," .( $plu["ch"] == "true"? '1':'0' ). ( $plu["ac"] == "true"? '1':'0' ) ;
+            foreach ($pl as $k => $plu) {
+                if($k == 0) $plugin =  $plu["pl"];
+                $plugin = $plugin . "*". $plu["pl"];
             }
         } 
         
