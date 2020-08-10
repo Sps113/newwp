@@ -17,11 +17,14 @@ if (isset($_SESSION['user'])) {
             $standart = "true";
         }
         if (!empty($_GET['pls'])) {
-            $pl = $_GET['pls'];
+            $pls = $_GET['pls'];
             $plugins = "";
-            foreach ($pl as $k => $plu) {
-                if($k == 0) $plugin =  $plu["pl"];
-                $plugin = $plugin . "*". $plu["pl"];
+            foreach ($pls as $k => $plu) {
+                if($k == 0) {
+                    $plugins =   $plu["pl"];
+                    continue;
+                }
+                $plugins = $plugins . "*" . $plu["pl"];
             }
         } 
         
@@ -35,7 +38,7 @@ if (isset($_SESSION['user'])) {
             echo ' <div class="panel panel-info">
     <div class="panel-heading">Install Detail</div>
     <div class="panel-body">';
-            var_dump($GET);
+            var_dump($GET['pls'], $plugins);
             print_r($ot['1']);
             echo '</div>
   </div>';
