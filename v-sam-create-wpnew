@@ -150,7 +150,7 @@ fi
 
 #FIX za https://github.com/wp-cli/wp-cli/issues/2632
 
-mysql -u$DBUSER -p$PASSWDDB -e "USE $DBUSER; update wp_options set option_value = 'https://$domain' where option_name = 'siteurl'; update wp_options set option_value = 'https://$domain' where option_name = 'home';"
+mysql -u$DBUSER -p$PASSWDDB -e "USE $DBUSER; update wp_options set option_value = 'https://$domain' where option_name = 'siteurl'; update wp_options set option_value = 'https://$domain' where option_name = 'home'; update wp_options set option_value = '0' where option_name = 'blog_public';"
 
 # clear
 
