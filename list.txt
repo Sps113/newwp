@@ -4,7 +4,9 @@ no-category-base-wpml
 redirection 
 wp-file-manager 
 wp-super-cache 
-wp-postratings 
+wp-postratings
+classic-editor
+wp-pagenavi 
 https://gmblsites.com/sheet/advanced-custom-fields-pro.zip 
 https://gmblsites.com/sheet/clearfy-pro.zip 
 https://gmblsites.com/sheet/robin-image-optimizer.zip 
